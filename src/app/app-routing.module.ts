@@ -30,7 +30,19 @@ const routes: Routes = [
   {
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'logout',
+    loadChildren: () => import('./pages/logout/logout.module').then( m => m.LogoutPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   }
+
 ];
 
 @NgModule({
