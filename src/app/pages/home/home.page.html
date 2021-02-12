@@ -7,7 +7,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <h2>Página Inicial</h2>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa doloremque vero expedita nesciunt quas optio eligendi dolores eius repellendus qui, nam explicabo id, vitae quia delectus quos, ut nisi. Animi?</p>
+<!-- 1. Verifica se os artigos já chegaram -->
+<ion-content class="ion-padding" fullscreen *ngIf="items">
+
+  <h2 class="ion-margin-bottom">Artigos Recentes</h2>
+
+  <!-- 2. Exibe os artigos -->
+  <div *ngFor="let item of items | async">
+
+    <!-- 3. 'card' clicável com o link do artigo -->
+    <ion-card class="ion-no-margin ion-margin-bottom" routerLink="/view/{{item.artId}}">
+
+      <img src="{{ item.img }}" alt="{{ item.title }}">
+
+      <ion-card-header>
+        <ion-card-title>{{ item.title }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>{{ item.intro }}</ion-card-content>
+
+    </ion-card>
+
+  </div>
+
 </ion-content>
