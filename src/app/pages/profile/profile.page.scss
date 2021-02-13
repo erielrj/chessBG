@@ -1,0 +1,19 @@
+img{
+    display: block;
+    margin: auto;
+    width: 40%;
+    border-radius: 100px;
+}
+
+ion-card-content {
+    p{
+        font-size: 1.08rem;
+    }
+
+    p.top:first-child{
+        margin-top: 15px;
+    }
+    p.top {
+        margin-top: 40px;
+    }
+}
