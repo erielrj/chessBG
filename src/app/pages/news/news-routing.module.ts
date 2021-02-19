@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { NewsPage } from './news.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
 const routes: Routes = [
   {
     path: '',
@@ -11,7 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), HttpClientModule],
   exports: [RouterModule],
 })
 export class NewsPageRoutingModule {}
