@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ranking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h3 class="ion-text-center"><strong>Ranking FIDE 2021 - TOP 10</strong></h3>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="title pointer" size="2" (click)="orderByRank()">#</ion-col>
+      <ion-col class="title pointer" (click)="orderByName()">Nome</ion-col>
+      <ion-col class="title pointer" size="2" (click)="orderByCountry()">País</ion-col>
+      <ion-col class="title pointer" size="3" (click)="orderByRating()">Rating</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let player of ranking | async">
+      <ion-col size="2">{{ player.rank }}</ion-col>
+      <ion-col *ngIf="player.article" routerLink="{{ player.article }}">{{ player.name }}</ion-col>
+      <ion-col *ngIf="!player.article">{{ player.name }}</ion-col>
+      <ion-col size="2">{{ player.country }}</ion-col>
+      <ion-col size="3">
+        {{ player.rating }}
+      </ion-col>
+    </ion-row>
+
+    <div *ngIf="!(ranking | async)">
+      <ion-row *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+        <ion-col class="ion-no-padding" size="2">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-col>
+        <ion-col class="ion-no-padding" size="2">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-col>
+        <ion-col class="ion-no-padding" size="3">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+
+</ion-content>

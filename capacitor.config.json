@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "proj02",
+  "appId": "chessbg.com.github.erielrj",
+  "appName": "ChessBG",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

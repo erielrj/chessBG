@@ -1,0 +1,28 @@
+div.flex {
+  display:flex;
+  justify-content: center;
+}
+
+.content{
+  max-width: 500px;
+
+
+  p.tech{
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+  }
+
+  p.section {
+    margin-bottom: 60px;
+    text-align: justify;
+  }
+
+
+}
+
+.avatar {
+  border-radius: 45%;
+  display:block;
+  margin:auto;
+}
