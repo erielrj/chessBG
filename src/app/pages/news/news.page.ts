@@ -24,7 +24,7 @@ export class NewsPage implements OnInit {
   ngOnInit() {
     // 4. Obtendo as noticias da API REST JSON usando HTTP
     this.http.get(this.apiURL).subscribe(
-      (data) => {
+      (data: any) => {
 
         // 5. atribui a newsList
         this.newsList = data.articles.slice(0, this.apiItems);

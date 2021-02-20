@@ -1,6 +1,6 @@
 {
   "appId": "chessbg.com.github.erielrj",
-  "appName": "ChessBG",
+  "appName": "chessBG",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
